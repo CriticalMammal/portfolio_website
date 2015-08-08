@@ -1,6 +1,5 @@
 * {
-	position: relative;
-	outline: 1px solid red;
+	/*outline: 1px solid red;*/
 	z-index: 2;
 }
 
@@ -47,6 +46,7 @@ canvas {
 }
 
 #window-bottom {
+	position: relative;
 	width: 960px;
 	height: 50%;
 	margin: 0 auto;
@@ -60,28 +60,30 @@ canvas {
 		url("img/menu_window_texture.png");
 }
 
-#nav-group-top {
+nav {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 }
 
-.nav {
-	width: 200px;
-	height: 30px;
-	margin: 20px auto 10px auto;
-	color: #020001;
+nav ul {
+	list-style-type: none;
 }
 
-.nav-clickable {
+nav ul li {
+	width: 200px;
+	height: 30px;
+	margin: 10px auto 0px auto;
+	padding-bottom: 10px;
 	text-align: center;
 	text-decoration: none;
 	font-size: 28px;
 	font-family: 'Oswald', sans-serif;
 	font-weight: bold;
+	color: #020001;
 }
 
-.nav-clickable a {
+nav ul li a {
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -89,6 +91,42 @@ canvas {
 	text-decoration: none;
 }
 
-.nav-clickable a:hover {
+nav ul li a:hover {
+	color: #545249;
+}
+
+#dropdown {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+}
+
+#dropdown-tab {
+	display: none;
+	width: 200px;
+	height: 100%;
+	margin: 0px auto 0px auto;
+	padding-bottom: 10px;
+	font-size: 28px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: #020001;
+	background-color: #B3B0A2;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+#dropdown-tab a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #14080B;
+	text-decoration: none;
+}
+
+#dropdown-tab a:hover {
 	color: #545249;
 }

@@ -19,6 +19,8 @@ function main() {
     island.state = menuHandler.state;
     island.update();
 
+    island.draw();
+
     requestAnimFrame(update); // do it all again
   }
 }

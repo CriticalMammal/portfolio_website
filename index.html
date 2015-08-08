@@ -3,6 +3,7 @@
 
 <head>
 	<title>Dylan Gallardo</title>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="normalize.css"/>
 	<link rel="stylesheet" type="text/css" href="styles.css"/>
 	<script language="javascript" type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -10,23 +11,16 @@
 
 <body>
 	<div id="window-top">
-		<div id="slat-group-top">
-			<div class="slat"></div>
-			<div class="slat"></div>
-			<div class="slat clickable-slat" id="about"><a href="#">ABOUT</a></div>
-			<div class="slat clickable-slat" id="portfolio"><a href="#">PORTFOLIO</a></div>
+		<div id="nav-group-top">
+			<div class="nav nav-clickable" id="about"><a href="#">ABOUT</a></div>
+			<div class="nav nav-clickable" id="portfolio"><a href="#">PORTFOLIO</a></div>
 		</div>
 	</div>
-	<div id="window-bottom">
-		<div id="slat-group-bottom">
-			<div class="slat"></div>
-			<div class="slat"></div>
-			<div class="slat"></div>
-			<div class="slat"></div>
-		</div>
-	</div>
+	<div id="window-bottom"></div>
 	
-	<canvas id="canvas">HTML5 Canvas isn't supported in this browser</canvas>
+	<div id="canvas-container">
+		<canvas id="canvas">HTML5 Canvas isn't supported in this browser</canvas>
+	</div>
 
 	<script src="js/menuHandler.js"></script>
 	<script src="js/island.js"></script>

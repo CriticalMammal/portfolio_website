@@ -15,8 +15,9 @@ function main() {
 	update();
 	
   function update() {
-    island.update();
     menuHandler.update();
+    island.state = menuHandler.state;
+    island.update();
 
     requestAnimFrame(update); // do it all again
   }

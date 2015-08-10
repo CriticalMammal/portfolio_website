@@ -17,6 +17,17 @@ Island.prototype.update = function() {
 
 Island.prototype.draw = function() {
 	if (this.state == "about") {
+		this.canvasContext.moveTo(0, 0);
+		this.canvasContext.beginPath();
+		this.canvasContext.lineTo(0, 0);
+		this.canvasContext.lineTo(this.width, 0);
+		this.canvasContext.lineTo(this.width, this.height);
+		this.canvasContext.lineTo(0, this.height);
+		this.canvasContext.closePath();
+
+		this.canvasContext.fillStyle = '#FE7D0F';
+	  this.canvasContext.fill();
+
 		this.canvasContext.moveTo(this.width-100, this.height-100);
 		this.canvasContext.beginPath();
 	  this.canvasContext.lineTo(this.width-100, this.height-100);

@@ -30,7 +30,7 @@ MenuHandler.prototype.aboutEvent = function() {
 	this.state = "about";
 	this.windowTopGoal = 400;
 	this.windowBottomGoal = 400;
-}
+};
 
 MenuHandler.prototype.portfolioEvent = function() {
 	this.dropdownTab.style.display = "block";

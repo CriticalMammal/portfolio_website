@@ -17,9 +17,9 @@ function MenuHandler() {
 MenuHandler.prototype.update = function() {
 	// interpolate positions
 	this.windowBottomOffsetY = interpolate(this.windowBottomOffsetY,
-		this.windowBottomGoal, 0, 0.08);
+		this.windowBottomGoal, 0, 0.1, 1);
 	this.windowTopOffsetY = interpolate(this.windowTopOffsetY,
-		this.windowTopGoal, 0, 0.08);
+		this.windowTopGoal, 0, 0.1, 1);
 
 	this.windowTop.css('bottom', this.windowTopOffsetY);
 	this.windowBottom.css('top', this.windowBottomOffsetY);
@@ -47,7 +47,7 @@ MenuHandler.prototype.openMenu = function() {
 };
 
 // linearly interpolate from part to goalPos (smooth animation effect)
-function interpolate(pos, goalPos, currentLerp, lerpSpeed) {
+function interpolate(pos, goalPos, currentLerp, lerpSpeed, cutoff) {
 		if (pos != goalPos) {
 			currentLerp = 0;
 		}
@@ -57,8 +57,11 @@ function interpolate(pos, goalPos, currentLerp, lerpSpeed) {
 		}
 
 		pos = lerp(pos, currentLerp, goalPos);
-    
-    return pos;
+    	
+    	if (pos <= goalPos+cutoff && pos >= goalPos-cutoff) {
+    		pos = goalPos;
+    	}
+    	return pos;
 }
 
 // actual formula for linear interpolation 

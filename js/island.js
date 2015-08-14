@@ -7,6 +7,16 @@ function Island() {
 	this.width = this.canvas.width;
 	this.height = this.canvas.height;
 	this.state = "none";
+
+	/* being stupid re-write this crap!!!!!!!!!!!!!!!!!!!
+	*/
+	this.landWidth = [];
+	this.baseWidth = 20;
+	this.baseHeight = 20;
+	this.rowCt = 8;
+	for (var i=0; i<rowCt; i--) {
+		this.landWidth.push(i*this.baseWidth + this.baseWidth);
+	}
 }
 
 Island.prototype.update = function() {
@@ -26,23 +36,32 @@ Island.prototype.draw = function() {
 		this.canvasContext.closePath();
 
 		this.canvasContext.fillStyle = '#FE7D0F';
-	  this.canvasContext.fill();
+	  	this.canvasContext.fill();
 
 		this.canvasContext.moveTo(this.width-100, this.height-100);
 		this.canvasContext.beginPath();
-	  this.canvasContext.lineTo(this.width-100, this.height-100);
+	  	this.canvasContext.lineTo(this.width-100, this.height-100);
 
-	  this.canvasContext.lineTo(this.width-200, this.height-100);
-	  this.canvasContext.lineTo(this.width-200, this.height-200);
-	  this.canvasContext.lineTo(this.width-100, this.height-200);
+		this.canvasContext.lineTo(this.width-200, this.height-100);
+		this.canvasContext.lineTo(this.width-200, this.height-200);
+		this.canvasContext.lineTo(this.width-100, this.height-200);
 
-	  this.canvasContext.closePath();
+		this.canvasContext.closePath();
 
-	  this.canvasContext.fillStyle = 'black';
-	  this.canvasContext.fill();
+		this.canvasContext.fillStyle = 'black';
+		this.canvasContext.fill();
 	}
 	else if (this.state == "portfolio") {
+		this.canvasContext.moveTo(0, 0);
+		this.canvasContext.beginPath();
+		this.canvasContext.lineTo(0, 0);
+		this.canvasContext.lineTo(this.width, 0);
+		this.canvasContext.lineTo(this.width, this.height);
+		this.canvasContext.lineTo(0, this.height);
+		this.canvasContext.closePath();
 
+		this.canvasContext.fillStyle = '#FE7D0F';
+	 	this.canvasContext.fill();
 	}
 	else {
 		this.canvasContext.moveTo(0, 0);
@@ -53,7 +72,9 @@ Island.prototype.draw = function() {
 		this.canvasContext.lineTo(0, this.height);
 		this.canvasContext.closePath();
 
-		this.canvasContext.fillStyle = 'black';
-	  // this.canvasContext.fill();
+		this.canvasContext.fillStyle = '#FE7D0F';
+	 	this.canvasContext.fill();
 	}
 }
+
+Island.prototype.draw
